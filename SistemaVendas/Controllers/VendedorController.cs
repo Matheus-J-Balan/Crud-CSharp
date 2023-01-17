@@ -91,5 +91,23 @@ namespace SistemaVendas.Controllers
             }
         
         }
+
+        [HttpPatch("{id}")]
+        public IActionResult AtualizaSenha(int id, AtualizarSenhaVendedorDTO dto)
+        {
+            var vendedor = _repository.ObterPorId(id);
+
+            if(vendedor is not null)
+            {
+                _repository.AtualizaSenha(vendedor, dto);
+                return Ok(vendedor);
+            }
+             else
+            {
+                return NotFound(new { Mensagem = "Vendedor não encontrado"});
+            }
+        
+        }
+
     }
 }
