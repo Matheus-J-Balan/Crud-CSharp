@@ -42,6 +42,7 @@ namespace SistemaVendas.Controllers
             }
             else
                 return NotFound(new { Mensagem = "Vendedor não encontrado"});
+            
         }
 
         [HttpGet("ObterPorNome/{nome}")]
@@ -70,6 +71,25 @@ namespace SistemaVendas.Controllers
             {
                 return NotFound(new { Mensagem = "Vendedor não encontrado"});
             }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id)
+        {
+            var vendedor = _repository.ObterPorId(id);
+
+
+            if(vendedor is not null)
+            {
+                _repository.DeletarVendedor(vendedor);
+                return NoContent();
+
+            }
+             else
+            {
+                return NotFound(new { Mensagem = "Vendedor não encontrado"});
+            }
+        
         }
     }
 }
