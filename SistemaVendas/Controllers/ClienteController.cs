@@ -29,5 +29,84 @@ namespace SistemaVendas.Controllers
             _repository.Cadastrar(cliente);
             return Ok();
         }
+
+        [HttpGet("{Id}")]
+        public IActionResult ObterPorId(int Id)
+        {
+            var cliente = _repository.ObterPorId(Id);
+
+            if(cliente is not null)
+            {
+                var clienteDTO = new ObterClienteDTO(cliente);
+                return Ok(clienteDTO);
+            }
+            else
+                return NotFound(new { Mensagem = "Vendedor não encontrado"});
+            
+        }
+
+        [HttpGet("ObterPorNome/{nome}")]
+        public IActionResult ObterPorNome(string nome)
+        {
+            var cliente = _repository.ObterPorNome(nome);
+            
+            if(cliente is not null)
+                return Ok(cliente);
+            else
+                return NotFound(new { Mensagem = "Vendedor não encontrado"});
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Atualizar(int id, AtualizarClienteDTO dto)
+        {
+            var cliente = _repository.ObterPorId(id);
+
+            if(cliente is not null)
+            {
+                cliente.MapearAtualizarClienteDTO(dto);
+                _repository.AtualizarCliente(cliente);
+                return Ok(cliente);
+            }
+            else
+            {
+                return NotFound(new { Mensagem = "Vendedor não encontrado"});
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id)
+        {
+            var cliente = _repository.ObterPorId(id);
+
+
+            if(cliente is not null)
+            {
+                _repository.DeletarVendedor(cliente);
+                return NoContent();
+
+            }
+             else
+            {
+                return NotFound(new { Mensagem = "Vendedor não encontrado"});
+            }
+        
+        }
+
+        [HttpPatch("{id}")]
+        public IActionResult AtualizaSenha(int id, AtualizarSenhaClienteDTO dto)
+        {
+            var cliente = _repository.ObterPorId(id);
+
+            if(cliente is not null)
+            {
+                _repository.AtualizaSenha(cliente, dto);
+                return Ok(cliente);
+            }
+             else
+            {
+                return NotFound(new { Mensagem = "Vendedor não encontrado"});
+            }
+        
+        }
     }
 }
