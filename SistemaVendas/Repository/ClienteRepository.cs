@@ -26,8 +26,8 @@ namespace SistemaVendas.Repository
 
         public Cliente ObterPorId(int Id)
         {
-            var cliente =_context.Cliente.Find(Id);
-            return vendedor;    
+            var cliente =_context.Clientes.Find(Id);
+            return cliente;    
         }
 
         public List<ObterClienteDTO> ObterPorNome(string nome)
@@ -48,14 +48,14 @@ namespace SistemaVendas.Repository
 
         public void DeletarCliente(Cliente cliente)
         {
-            _context.Vendedores.Remove(cliente);
+            _context.Clientes.Remove(cliente);
             _context.SaveChanges();
         }
 
-        public void AtualizaSenha(Cliente cliente, AtualizarSenhaClienteDTO dto)
+        public void AtualizaSenha(Cliente cliente, AtualizaSenhaClienteDTO dto)
         {
             cliente.Senha = dto.senha;
-            AtualizarVendedor(cliente);
+            AtualizarCliente(cliente);
         }
     }
 }

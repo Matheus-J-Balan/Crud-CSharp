@@ -81,7 +81,7 @@ namespace SistemaVendas.Controllers
 
             if(cliente is not null)
             {
-                _repository.DeletarVendedor(cliente);
+                _repository.DeletarCliente(cliente);
                 return NoContent();
 
             }
@@ -93,7 +93,7 @@ namespace SistemaVendas.Controllers
         }
 
         [HttpPatch("{id}")]
-        public IActionResult AtualizaSenha(int id, AtualizarSenhaClienteDTO dto)
+        public IActionResult AtualizaSenha(int id, AtualizaSenhaClienteDTO dto)
         {
             var cliente = _repository.ObterPorId(id);
 
