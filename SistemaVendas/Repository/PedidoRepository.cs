@@ -26,11 +26,30 @@ namespace SistemaVendas.Repository
             return pedido;
         }
 
+        public List<Pedido> Listar()
+        {
+            var pedido = _context.Pedidos.ToList();
+            return pedido;
+        }
         public Pedido ObterPorId(int id)
         {
             var pedido = _context.Pedidos.Include(x => x.Vendedor)
                                          .Include(x => x.Cliente)
                                          .FirstOrDefault(x => x.Id == id);
+            return pedido;
+        }
+        public List<ObterPedidoDTO> ObterVendedorPedido(int id)
+        {
+            var pedido = _context.Pedidos.Where(x => x.VendedorId == id)
+                                         .Select(x => new ObterPedidoDTO(x))
+                                         .ToList();
+            return pedido;
+        }
+        public List<ObterPedidoDTO> ObterClientePedido(int id)
+        {
+            var pedido = _context.Pedidos.Where(x => x.ClienteId == id)
+                                         .Select(x => new ObterPedidoDTO(x))
+                                         .ToList();
             return pedido;
         }
     }

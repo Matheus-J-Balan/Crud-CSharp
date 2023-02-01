@@ -30,6 +30,21 @@ namespace SistemaVendas.Controllers
             return Ok(pedido);
         }
 
+        [HttpGet]
+        public IActionResult Obter()
+        {
+            var pedido = _repository.Listar();
+
+            if(pedido is not null)
+            {
+                return Ok(pedido);
+            }
+            else
+            {
+                return NotFound(new { Mensagem = "Não há pedidos"});
+            }
+        }      
+        
         [HttpGet("{id}")]
         public IActionResult ObterPorId(int id)
         {
@@ -43,7 +58,36 @@ namespace SistemaVendas.Controllers
             {
                 return NotFound(new { Mensagem = "Pedido não encontrado"});
             }
-        } 
+        }      
         
+        [HttpGet("ObterPorVendedor/{id}")]
+        public IActionResult ObterPorVendedor(int id)
+        {
+            var vendedor = _repository.ObterVendedorPedido(id);
+
+            if(vendedor is not null)
+            {
+                return Ok(vendedor);
+            }
+            else
+            {
+                return NotFound(new { Mensagem = "Este vendedor não possui nenhum pedido"});
+            }
+        }
+        [HttpGet("ObterPorCliente/{id}")]
+        public IActionResult ObterPorCliente(int id)
+        {
+            var cliente = _repository.ObterClientePedido(id);
+
+            if(cliente is not null)
+            {
+                return Ok(cliente);
+            }
+            else
+            {
+                return NotFound(new { Mensagem = "Este cliente não possui nenhum pedido"});
+            }
+        }
+
     }
 }
