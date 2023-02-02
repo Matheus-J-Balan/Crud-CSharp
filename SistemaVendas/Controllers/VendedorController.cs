@@ -31,7 +31,7 @@ namespace SistemaVendas.Controllers
         }
 
         [HttpGet("{Id}")]
-        public IActionResult ObterPorId(int Id)
+        public IActionResult ConsultarPorId(int Id)
         {
             var vendedor = _repository.ObterPorId(Id);
 
@@ -45,8 +45,8 @@ namespace SistemaVendas.Controllers
             
         }
 
-        [HttpGet("ObterPorNome/{nome}")]
-        public IActionResult ObterPorNome(string nome)
+        [HttpGet("ConsultarPorNome/{nome}")]
+        public IActionResult ConsultarPorNome(string nome)
         {
             var vendedores = _repository.ObterPorNome(nome);
             
