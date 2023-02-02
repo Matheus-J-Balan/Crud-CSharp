@@ -106,5 +106,24 @@ namespace SistemaVendas.Controllers
             }
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id)
+        {
+            var pedido = _repository.ObterPorId(id);
+
+
+            if(pedido is not null)
+            {
+                _repository.DeletarPedido(pedido);
+                return NoContent();
+
+            }
+             else
+            {
+                return NotFound(new { Mensagem = "Pedido não encontrado"});
+            }
+        
+        }
+
     }
 }
