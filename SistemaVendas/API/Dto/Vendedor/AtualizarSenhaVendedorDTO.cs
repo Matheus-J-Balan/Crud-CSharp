@@ -7,6 +7,6 @@ namespace SistemaVendas.Dto
 {
     public class AtualizarSenhaVendedorDTO
     {
-        public string senha { get; set; }
+        public string? senha { get; set; }
     }
 }

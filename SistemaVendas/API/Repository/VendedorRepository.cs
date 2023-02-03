@@ -26,6 +26,12 @@ namespace SistemaVendas.Repository
             _context.SaveChanges();  
         }
 
+        public List<Vendedor> Listar()
+        {
+            var vendedor = _context.Vendedores.ToList();
+            return vendedor;
+        }
+
         public Vendedor ObterPorId(int Id)
         {
             var vendedor =_context.Vendedores.Find(Id);

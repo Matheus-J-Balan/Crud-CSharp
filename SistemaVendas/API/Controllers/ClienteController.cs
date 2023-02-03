@@ -9,7 +9,7 @@ using SistemaVendas.Dto;
 using SistemaVendas.Models;
 using SistemaVendas.Context;
 
-namespace SistemaVendas.Controllers
+namespace SistemaVendas.Controllers 
 {
     [ApiController]
     [Route("[controller]")]
@@ -29,6 +29,21 @@ namespace SistemaVendas.Controllers
             _repository.Cadastrar(cliente);
             return Ok();
         }
+
+        [HttpGet]
+        public IActionResult Listar()
+        {
+            var cliente = _repository.Listar();
+
+            if(cliente is not null)
+            {
+                return Ok(cliente);
+            }
+            else
+            {
+                return NotFound(new { Mensagem = "Não há clientes"});
+            }
+        } 
 
         [HttpGet("{Id}")]
         public IActionResult ConsultarPorId(int Id)

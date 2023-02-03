@@ -10,7 +10,7 @@ using SistemaVendas.Models;
 using SistemaVendas.Context;
 
 namespace SistemaVendas.Controllers
-{
+{ 
     [ApiController]
     [Route("[controller]")]
     public class VendedorController : ControllerBase
@@ -28,6 +28,21 @@ namespace SistemaVendas.Controllers
             var vendedor = new Vendedor(dto);
             _repository.Cadastrar(vendedor);
             return Ok(vendedor);
+        }
+
+        [HttpGet]
+        public IActionResult Listar()
+        {
+            var vendedor = _repository.Listar();
+
+            if(vendedor is not null)
+            {
+                return Ok(vendedor);
+            }
+            else
+            {
+                return NotFound(new { Mensagem = "Não há vendedores"});
+            }
         }
 
         [HttpGet("{Id}")]

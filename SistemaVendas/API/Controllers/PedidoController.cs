@@ -9,7 +9,7 @@ using SistemaVendas.Dto;
 using SistemaVendas.Models;
 using SistemaVendas.Context;
 
-namespace SistemaVendas.Controllers
+namespace SistemaVendas.Controllers 
 {
     [ApiController]
     [Route("[controller]")]
