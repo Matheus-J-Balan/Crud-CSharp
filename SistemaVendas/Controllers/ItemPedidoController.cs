@@ -76,6 +76,25 @@ namespace SistemaVendas.Controllers
             {
                 return NotFound(new { Mensagem = "Item não encontrado ou não existente"});
             }
+
+        }
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id)
+        {
+            var item = _repository.ObterPorId(id);
+
+
+            if(item is not null)
+            {
+                _repository.DeletarItemPedido(item);
+                return NoContent();
+
+            }
+                else
+            {
+                return NotFound(new { Mensagem = "Item não encontrado"});
+            }
+        
         }
     }
 }

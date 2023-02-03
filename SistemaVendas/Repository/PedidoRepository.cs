@@ -66,5 +66,7 @@ namespace SistemaVendas.Repository
             _context.Pedidos.Remove(pedido);
             _context.SaveChanges();
         }
+
+        
     }
 }

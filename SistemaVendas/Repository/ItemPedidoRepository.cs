@@ -48,6 +48,11 @@ namespace SistemaVendas.Repository
             return item;
         }
         
+        public void DeletarItemPedido(ItemPedido item)
+        {
+            _context.ItensPedido.Remove(item);
+            _context.SaveChanges();
+        }
 
     }
 }
