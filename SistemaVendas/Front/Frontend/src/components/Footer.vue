@@ -1,6 +1,14 @@
 <template>
     <footer id="footer">
-       <p>Sistema Vendas</p>
+        <div>
+            <p>Sistema Vendas</p>
+        </div>
+        <div>
+            <p>Feito por: Matheus Balan</p>
+       </div>
+       <div id="linkedin">
+            <p><a href="https://www.linkedin.com/in/matheus-balan-68657a247/">Linkedin</a></p>
+       </div>
     </footer>
 </template>
 
@@ -21,4 +29,5 @@ export default {
         justify-content: center;
         width: 100%;
     }
+    
 </style>
