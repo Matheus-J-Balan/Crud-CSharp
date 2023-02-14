@@ -1,9 +1,9 @@
 <template>
-    <h1>LISTADO</h1>  
+    <h1>CADASTRADO</h1>  
  </template>
  
  <script>
  export default {
-     name:'ListarServico'
+     name:'CadastrarServicoView'
  }
  </script>

@@ -1,6 +1,6 @@
 import http from "../http-common.js"
 
-class VendedorDataService{
+class ClienteDataService{
     listar(){
         return http.get('/Cliente')
     }
@@ -18,4 +18,4 @@ class VendedorDataService{
     }
 }
 
-export default new VendedorDataService()
+export default new ClienteDataService()
