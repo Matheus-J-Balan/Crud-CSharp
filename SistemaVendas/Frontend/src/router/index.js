@@ -5,8 +5,9 @@ import ListarVendedorView from '../views/vendedorView/ListarVendedorView'
 import CadastrarVendedorView from '../views/vendedorView/CadastrarVendedorView'
 import AtualizarVendedorView from '../views/vendedorView/AtualizarVendedorView'
 
-import ListarCliente from '../views/cliente/ListarCliente'
-import CadastrarCliente from '../views/cliente/CadastrarCliente'
+import ListarClienteView from '../views/clienteView/ListarClienteView'
+import CadastrarClienteView from '../views/clienteView/CadastrarClienteView'
+import AtualizarClienteView from '../views/clienteView/AtualizarClienteView'
 
 import ListarServico from '../views/servico/ListarServico'
 import CadastrarServico from '../views/servico/CadastrarServico'
@@ -44,13 +45,18 @@ const routes = [
 
   {
     path: "/cliente/listar",
-    name: 'ListarCliente',
-    component: ListarCliente
+    name: 'ListarClienteView',
+    component: ListarClienteView
   },
   {
     path: "/cliente/cadastrar",
-    name: 'CadastrarCliente',
-    component: CadastrarCliente
+    name: 'CadastrarClienteView',
+    component: CadastrarClienteView
+  },
+  {
+    path: "/cliente/atualizar/:id",
+    name: 'AtualizarClienteView',
+    component: AtualizarClienteView
   },
 
 
