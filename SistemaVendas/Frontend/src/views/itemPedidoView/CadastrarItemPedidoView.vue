@@ -1,9 +1,13 @@
 <template>
-    <h1>CADASTRADO</h1>  
+    <CadastrarItemPedido/>
  </template>
  
  <script>
+ import CadastrarItemPedido from '@/components/ItemPedido/CadastrarItemPedido.vue';
  export default {
-     name:'CadastrarItemPedidoView'
+     name:'CadastrarItemPedidoView',
+     components:{
+        CadastrarItemPedido
+     }
  }
  </script>

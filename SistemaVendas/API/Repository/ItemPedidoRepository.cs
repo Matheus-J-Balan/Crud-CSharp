@@ -28,7 +28,12 @@ namespace SistemaVendas.Repository
 
         public List<ItemPedido> Listar()
         {
-            var item = _context.ItensPedido.ToList();
+            var item = _context.ItensPedido
+                                           .Include(x => x.Servico)
+                                           .Include(x => x.Pedido)
+                                           .Include(x => x.Pedido.Cliente)
+                                           .Include(x => x.Pedido.Vendedor)
+                                           .ToList();
             return item;
         }
 

@@ -15,6 +15,7 @@
               <td scope="row">{{ toLocaleDate(pedido.data) }}</td>
               <td>{{ pedido.vendedorId }}</td>
               <td>{{ pedido.clienteId }}</td>
+              <td>{{ pedido.clienteId }}</td>
               <td>
                 <button class="btn btn-success" @click="editarPedido(pedido.id)">Editar</button>
                 <button class="btn btn-danger" @click="excluirPedido(pedido)">Excluir</button>
@@ -32,7 +33,7 @@ export default {
     name: "ListarPedido",
     data() {
       return{
-        pedidos: []
+        pedidos: [],
       }
     },
     methods: {
@@ -55,7 +56,7 @@ export default {
       toLocaleDate(date){
         let localeDate = new Date(date)
         return localeDate.toLocaleString()
-      }
+      },
     },
     computed: {
     },
