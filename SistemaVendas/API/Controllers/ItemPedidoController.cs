@@ -93,8 +93,7 @@ namespace SistemaVendas.Controllers
                 else
             {
                 return NotFound(new { Mensagem = "Item não encontrado"});
-            }
-        
+            }    
         }
     }
 }

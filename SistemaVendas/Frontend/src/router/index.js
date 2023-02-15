@@ -13,11 +13,13 @@ import ListarServicoView from '../views/servicoView/ListarServicoView'
 import CadastrarServicoView from '../views/servicoView/CadastrarServicoView'
 import AtualizarServicoView from '../views/servicoView/AtualizarServicoView'
 
-import ListarPedido from '../views/pedido/ListarPedido'
-import CadastrarPedido from '../views/pedido/CadastrarPedido'
+import ListarPedidoView from '../views/pedidoView/ListarPedidoView'
+import CadastrarPedidoView from '../views/pedidoView/CadastrarPedidoView'
+import AtualizarPedidoView from '../views/pedidoView/AtualizarPedidoView'
 
-import ListarItemPedido from '../views/itemPedido/ListarItemPedido'
-import CadastrarItemPedido from '../views/itemPedido/CadastrarItemPedido'
+import ListarItemPedidoView from '../views/itemPedidoView/ListarItemPedidoView'
+import CadastrarItemPedidoView from '../views/itemPedidoView/CadastrarItemPedidoView'
+import AtualizarItemPedidoView from '../views/itemPedidoView/AtualizarItemPedidoView'
 
 const routes = [
   {
@@ -72,7 +74,7 @@ const routes = [
     component: CadastrarServicoView
   },
   {
-    path: "/servico/cadastrar",
+    path: "/servico/atualizar/:id",
     name: 'AtualizarServicoView',
     component: AtualizarServicoView
   },
@@ -80,25 +82,35 @@ const routes = [
 
   {
     path: "/pedido/listar",
-    name: 'ListarPedido',
-    component: ListarPedido
+    name: 'ListarPedidoView',
+    component: ListarPedidoView
   },
   {
     path: "/pedido/cadastrar",
-    name: 'CadastrarPedido',
-    component: CadastrarPedido
+    name: 'CadastrarPedidoView',
+    component: CadastrarPedidoView
+  },
+  {
+    path: "/pedido/atualizar/:id",
+    name: 'AtualizarPedidoView',
+    component: AtualizarPedidoView
   },
 
   
   {
     path: "/itemPedido/listar",
-    name: 'ListarItemPedido',
-    component: ListarItemPedido
+    name: 'ListarItemPedidoView',
+    component: ListarItemPedidoView
   },
   {
     path: "/itemPedido/cadastrar",
-    name: 'CadastrarItemPedido',
-    component: CadastrarItemPedido
+    name: 'CadastrarItemPedidoView',
+    component: CadastrarItemPedidoView
+  },
+  {
+    path: "/itemPedido/Atualizar/:id",
+    name: 'AtualizarItemPedidoView',
+    component: AtualizarItemPedidoView
   }
  
 ]

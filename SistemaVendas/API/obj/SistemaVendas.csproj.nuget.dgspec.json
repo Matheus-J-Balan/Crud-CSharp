@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\xampp\\htdocs\\.NET\\Crud-CSharp\\SistemaVendas\\API\\SistemaVendas.csproj": {}
+    "C:\\xampp\\htdocs\\.NET\\Crud-CSharp\\SistemaVendas\\api\\SistemaVendas.csproj": {}
   },
   "projects": {
-    "C:\\xampp\\htdocs\\.NET\\Crud-CSharp\\SistemaVendas\\API\\SistemaVendas.csproj": {
+    "C:\\xampp\\htdocs\\.NET\\Crud-CSharp\\SistemaVendas\\api\\SistemaVendas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\xampp\\htdocs\\.NET\\Crud-CSharp\\SistemaVendas\\API\\SistemaVendas.csproj",
+        "projectUniqueName": "C:\\xampp\\htdocs\\.NET\\Crud-CSharp\\SistemaVendas\\api\\SistemaVendas.csproj",
         "projectName": "SistemaVendas",
-        "projectPath": "C:\\xampp\\htdocs\\.NET\\Crud-CSharp\\SistemaVendas\\API\\SistemaVendas.csproj",
+        "projectPath": "C:\\xampp\\htdocs\\.NET\\Crud-CSharp\\SistemaVendas\\api\\SistemaVendas.csproj",
         "packagesPath": "C:\\Users\\matheus.balan\\.nuget\\packages\\",
-        "outputPath": "C:\\xampp\\htdocs\\.NET\\Crud-CSharp\\SistemaVendas\\API\\obj\\",
+        "outputPath": "C:\\xampp\\htdocs\\.NET\\Crud-CSharp\\SistemaVendas\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\matheus.balan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -78,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

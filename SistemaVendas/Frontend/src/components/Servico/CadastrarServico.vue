@@ -10,38 +10,33 @@
               <label for="" class="form-label">Login</label>
               <input type="text" class="form-control" required placeholder="Descricao" v-model="cadastro.Descricao">
           </div>
-          <div>
-              <label for="" class="form-label">Senha</label>
-              <input type="password" class="form-control" required v-model="cadastro.Senha">
-          </div>
           <button class="btn btn-success" style="margin-top: 4%;" @click="cadastrarServico">Cadastrar</button>
       </div>
     </div>
 </template>
   
 <script>
-import ClienteDataService from '@/service/ClienteDataService'  
-  export default {
+import ServicoDataService from '@/service/ServicoDataService'
+
+export default {
       name: "CadastroServico",
       data(){
           return{
               cadastro: {
                   "Nome": "",
-                  "Login": "",
-                  "Senha": ""
+                  "Descricao": ""
               }
           }
       },
       methods: {
-          cadastrarCliente(){
+          cadastrarServico(){
               var data = {
                   Nome: this.cadastro.Nome,
-                  Login: this.cadastro.Login,
-                  Senha: this.cadastro.Senha,
-              }
-              ClienteDataService.cadastrar(data)
+                  Descricao: this.cadastro.Descricao,
+                }
+              ServicoDataService.cadastrar(data)
                   .then(() => {
-                      this.$router.push('/cliente/listar')
+                      this.$router.push('/servico/listar')
                   })
           }
       }

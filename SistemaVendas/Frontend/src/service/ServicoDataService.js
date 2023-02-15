@@ -14,7 +14,7 @@ class ServicoDataService{
         return http.get(`/Servico/${id}`)
     }
     async deletar(id){
-        return await http.delete("/Servico /"+id)
+        return await http.delete("/Servico/"+id)
     }
 }
 

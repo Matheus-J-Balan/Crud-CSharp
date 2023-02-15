@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8OM9Wi1jtImHDt+LqaQa48MeWg1XUf7n1HlaMxWYLQjCPshto1knsNP2o8IUQFVl7c892YZQRTWiiJsPa/Gzeg==",
+  "dgSpecHash": "VoivI8h7Rx3sd7hw7mx19zvImoprzI0YnIgdVDRVfFv+StwHBux8fQtj/Fqq616EUparSdeV6LtOKwOjPItGIg==",
   "success": true,
-  "projectFilePath": "C:\\xampp\\htdocs\\.NET\\Crud-CSharp\\SistemaVendas\\API\\SistemaVendas.csproj",
+  "projectFilePath": "C:\\xampp\\htdocs\\.NET\\Crud-CSharp\\SistemaVendas\\api\\SistemaVendas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matheus.balan\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\matheus.balan\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

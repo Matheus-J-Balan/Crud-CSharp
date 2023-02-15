@@ -1,12 +1,14 @@
 <template>
-        <h1></h1>
+    <AtualizarServico/>
 </template>
 
 <script>
+import AtualizarServico from '@/components/Servico/AtualizarServico.vue';
+
 export default {
     name: 'AtualizarServicoView',
     components:{
-        
+        AtualizarServico      
     }
 }
-</script>
+</script>  
